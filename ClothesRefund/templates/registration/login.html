@@ -1,0 +1,32 @@
+<!-- Link to css index page here -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+<!-- Link for the css-->
+<link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+<!-- Font Awesome 6 icons. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Here is my template for the login page. For each templates of this part, I used the same html base to do them. The user is redirected to this page if he hasn't registered yet. Hes has the choice between login, sign-up or choose to get another password.-->
+
+       <header class="text-center-desktop text-center-mobile theme-light">
+        <div class="col-2 col-text">
+            <h1><div style="margin:0; margin-top: 15px;margin-bottom: 10px;">You can log in here:</div></h1>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <!-- Here is the button to log-in after that we put the correct username and password. -->
+              <button type="submit" class="btn btn-solid" style="margin: auto;"><i class="fa-solid fa-right-to-bracket"></i> Log In</button>
+            </form>
+            <!-- I need to put these buttons outside the form, otherwise the 3 buttons will do the same things, which is redirect the user to the home page. This is why I use a href here, and not a submit button. -->
+            <h1><div style="margin:0; margin-top: 15px;margin-bottom: 10px;">You can sign-up here:</div></h1>
+            <!-- Here is the button to sign-up. -->
+            <p><a href="{% url 'signup' %}" class="btn btn-primary" style="margin: auto;">Sign up</a></p>
+            <h2>Forgot your password? Click here</h2>
+            <!-- Here is the button to reset the password. -->
+            <p><a href="{% url 'password_reset' %}" class="btn btn-primary" style="margin: auto;">Reset password</a></p>
+        </div>
+        <!-- A simple image for the beauty of the page.  -->
+        <figure>
+					<img src="../../../static/img/ngolo.png" alt="Placeholder image">
+				</figure>
+    </header>

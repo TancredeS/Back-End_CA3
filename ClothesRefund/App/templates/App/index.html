@@ -1,0 +1,46 @@
+<!-- Link to css index page here -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+<!-- Link for the css-->
+<link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+<!-- Font Awesome 6 icons. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--  This page is the index page, where the user can go to all the existing pages, and so chosing what action he wants to do.-->
+
+    <!-- CA2:
+    Now the page can check if the user has registered when he enters this page. If yes, he can see the normal index page. If he hasn't registered, he is directly redirected to the log-in page. -->
+{% if user.is_authenticated %}
+    <header class="text-center-desktop text-center-mobile theme-light">
+        <div class="container-text">		
+            <h1>Welcome to ClothesRefund {{ user.username }}!</h1>
+            <h2>You have the choice to choose what you want to do here:</h2>
+        </div>
+        <div class="container-btn">
+                <!-- This first button is here to create a new clothe -->
+            <a href="/addclothes" class="btn btn-solid"><i class="fa-solid fa-plus"></i><span>Register new clothes here :</span></a>
+
+                <!-- This second button is here to remove the user clothes -->
+            <a href="/remove_clothes" class="btn btn-solid"><i class="fa-solid fa-trash"></i><span>Remove clothes here :</span></a>
+
+                <!-- This third button is here to edit the user clothes -->
+            <a  href="/edit_clothes" class="btn btn-solid">
+            <i class="fa-solid fa-pen-to-square"></i><span>Edit your clothes here :</span></a>
+
+                <!-- This last button is here to see the list of clothes -->
+
+            <a href="/clothes_list" class="btn btn-solid"><i class="fa-solid fa-list"></i><span>See the list of clothes here :</span></a>
+
+        </div>	
+				<figure>
+					<img src="../../../static/img/clothes-removebg-preview.png" alt="Placeholder image">
+				</figure>
+            <!--  CA2 : 
+            Here is the button in the home page to log-out.-->
+        <p><a href="{% url 'logout' %}" class="btn btn-solid"><i class="fa-solid fa-right-from-bracket"></i></i>Log Out</a></p>
+        
+
+    </header>
+    {% else %}
+        <a href="{% url 'login' %}"></a>
+    {% endif %}

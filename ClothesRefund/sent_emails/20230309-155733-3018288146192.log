@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: tancrede.salotti@epita.fr
+Date: Thu, 09 Mar 2023 14:57:33 -0000
+Message-ID: 
+ <167837385359.4888.4005712151303080574@DESKTOP-6R2MH7L.customer.ask4.lan>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/bksxnx-b8973fb1f0a4a56881d7bfa6ff49f2ba/
+
+Your username, in case you’ve forgotten: Tancrede
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
